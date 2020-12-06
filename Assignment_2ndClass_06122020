@@ -1,2 +1,41 @@
 
 Input dataset is sales data provided in the repository .
+
+use case
+================
+(a) 
+get the quarterly sales report for each product .
+
+output dataset should have below field : 
+
+quarter,productName ,sales(amount)
+
+Steps to be followed
+=======================
+1. connect to the edge node
+2. create csv file from input sales dataset
+3. create project specific folder in hdfs
+4. ingest/load/dump input dataset into hdfs path
+ sample command : 
+ hdfs dfs -copyFromLocal <local path>/filename.csv 
+5. validate the hdfs path and check on the splits once step 4 is successful 
+go through the generated split very carefully 
+6. connect to hive through Hue/CLI/beeline 
+7. prepare hive query just like sql as per the requirement 
+
+note down all the sql command you are thinking to use to get the required output and why ?
+
+
+If stuck anywhere or need help drop a mail to rd208872@gmail.com stating your queries . 
+
+Those we doesn't have cloudera VM available in their local system , alternative process documentataion will be uploaded here .. 
+
+(b)
+check if any duplicate rows are available in the dataset ?
+
+
+
+
+
+
+
