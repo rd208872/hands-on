@@ -1,0 +1,116 @@
+This documentation gives complete information about HDFS Commands:
+--------------------------------------------------------------------------
+
+HDFS User Commands are:
+1. fs / dfs
+2. archive
+3. distcp
+
+HDFS Admin Commands are:
+1. namenode -format
+2. namenode
+3. secondarynamenode
+4. datanode
+5. dfsadmin
+6. fsck
+
+
+Generic commands : - Not mandatory , this is required to customize command run time environment
+
+Steps to practice 
+====================
+Try like below 
+
+> hadoop fs -help copyFromLocal
+> hadoop fs -usage copyFromLocal (you will get notation / structure of the command ) [ help to avoid any format issue , space issue , case sensitivity issue etc..)
+
+
+Shell scripts
+-----------------
+1. Hadoop
+2. hdfs
+3. mapred
+4. yarn 
+
+We will first cover hadoop and hdfs shell script 
+
+> fs – Generic Filesystem Client
+> dfs - Distributed File system client
+
+Facts about HDFS:
+-----------------
+In HDFS, the data is organized as blocks, blocks are stored in replicated fashion across data nodes.
+In HDFS, the default block replication is 3 i.e., thre different data nodes.
+HDFS build on Linux , so it behaves Linux like file system through its POSIX capabilities.
+In HDFS, File system starts with root i.e., "/".
+In HDFS, every user has home directory like linux HOME i.e., /user/$USER or /user/username.
+After connecting to terminal , you will get username@hostname .
+In HDFS, directory is empty file and replication factor is not applicable.
+In HDFS, every file & directory has file permissions to restict the data access.
+HDFS file system protocol is hdfs://
+HDFS consider Linux users and groups.
+
+fs/dfs is the command to execute file system operations like directory creation, renaming files,copying files, removing, displaying files, etc. It offers several command options, some of them are below
+
+fs is associated with hadoop shell script whereas dfs is associated with hdfs shell script. Both have a bunch of command options.
+dfs can use uses in case of generic/ tradional file system whereas fs cannot compatible with distributed filesystem .
+
+commands
+==============
+a. help - to get the command option description
+b. usage - get the command option usage
+-------------------------------------------------------
+ls - listing files/dirs
+
+mkdir - directory creation
+
+put, copyFromLocal - load file from local system to HDFS
+
+moveFromLocal	- move file from local system to HDFS
+
+appendToFile -- append the file with another file in HDFS.
+
+cat - to print the HDFS file data over console.
+
+moveToLocal - This is not implemented.
+
+copyToLocal - to get files from HDFS to Local
+
+count - to get file/dir count, quota info, path & size details.
+
+du - disk utilization
+
+df - disk free
+
+cp/mv - copy/move files from HDFS to HDFS.
+
+rmdir/rm - rmdir used to delete empty directory where rm is used to delete files and directories.
+
+get, getmerge - to get files from HDFS to Local
+
+checksum - to dump file checksum
+
+find - to find the specific file/dir in a specified path.
+
+tail - to get the last 1kb of the file.
+
+setrep - to alter replication of file/dir.
+
+touchz - to create empty file.
+
+truncate - to truncate the data to a particular length.
+
+chmod, chgrp, chown - to change permissions, owner, group of file/dir.
+
+
+[-createSnapshot <snapshotDir> [<snapshotName>]]
+[-deleteSnapshot <snapshotDir> <snapshotName>]
+[-renameSnapshot <snapshotDir> <oldName> <newName>]
+[-getfacl [-R] <path>]
+[-getfattr [-R] {-n name | -d} [-e en] <path>]
+[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+[-setfattr {-n name [-v value] | -x name} <path>]
+[-expunge]
+[-text [-ignoreCrc] <src> ...]
+
+
